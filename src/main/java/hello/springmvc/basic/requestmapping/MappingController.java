@@ -10,7 +10,7 @@ public class MappingController {
     private Logger log = LoggerFactory.getLogger(getClass());
 
     @RequestMapping("/hello-basic")
-    public String helloBasic(){
+    public String helloBasic() {
         log.info("hello-basic");
         return "Hello Spring Boot Basic";
     }
@@ -35,12 +35,10 @@ public class MappingController {
     }
 
     @GetMapping("/mapping/users/{userId}/orders/{orderId}")
-    public String mappingPath(@PathVariable String userId, @PathVariable Long
-            orderId) {
+    public String mappingPath(@PathVariable String userId, @PathVariable Long orderId) {
         log.info("mappingPath userId={}, orderId={}", userId, orderId);
         return "ok";
     }
-
 
 
     @GetMapping(value = "/mapping-param", params = "mode=debug")
@@ -50,13 +48,11 @@ public class MappingController {
     }
 
 
-
     @GetMapping(value = "/mapping-header", headers = "mode=debug")
     public String mappingHeader() {
         log.info("mappingHeader");
         return "ok";
     }
-
 
 
     @PostMapping(value = "/mapping-consume", consumes = "application/json")
@@ -70,24 +66,6 @@ public class MappingController {
         log.info("mappingProduces");
         return "ok";
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
